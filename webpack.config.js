@@ -6,9 +6,12 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     mode: modoDev ? 'development' : 'production',
-    entry: './src/principal.js',
+    entry: {
+        principal: './src/principal.js',
+        novaPagina: './src/novaPagina.js',
+    },
     output: {
-        filename: 'principal.js',
+        filename: '[name].bundle.js',
         path: __dirname + '/public'
     },
     devServer: {
